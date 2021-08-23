@@ -24,6 +24,6 @@ window.onscroll = function (e) {
 };
 
 
-$("#toogle_nav").click(function () {
-  $(".alloptions").toggle(1000);
-});
+// $("#toogle_nav").click(function () {
+//   $(".alloptions").toggle(1000);
+// });
