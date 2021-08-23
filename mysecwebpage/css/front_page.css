@@ -26,6 +26,15 @@ a:hover {
   position: absolute;
   z-index: 1030;
   margin: 10px;
+  /* width: 95vw; */
+}
+
+.dot_svg{
+  color: white;
+  margin: 15px;
+  float:right;
+  display: none;
+
 }
 
 .logo {
@@ -206,6 +215,10 @@ body {
 @media only screen and (max-width: 600px) {
   .alloptions {
     display: none;
+  }
+
+  .dot_svg{
+    display: block;
   }
 }
 
