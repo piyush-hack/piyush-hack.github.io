@@ -100,7 +100,7 @@ a:hover {
   text-decoration: none;
   background-color: white;
   color: black;
-  margin: 0px 10px 0px 10px;
+/*   margin: 0px 10px 0px 10px; */
   padding: 5px 10px 5px 10px;
   font-weight: 300;
   border-radius: 25px;
@@ -235,7 +235,7 @@ body {
 
   }
   
-  .fd_btn{
+/*   .fd_btn{
     margin: 0px 10px 0px 0px;
-  }
+  } */
 }
