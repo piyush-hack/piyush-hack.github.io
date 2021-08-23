@@ -22,3 +22,8 @@ window.onscroll = function (e) {
         $(".con2").css('z-index', 1030);
     }
 };
+
+
+$("#toogle_nav").click(function () {
+  $(".alloptions").toggle(1000);
+});
