@@ -16,7 +16,7 @@ $(function () {
 
 var show = get("show");
 console.log("get show is :" , show);
-var display = "projects";
+var display = "#projects";
 if(show != undefined){
     display = "#" + show;
 }
