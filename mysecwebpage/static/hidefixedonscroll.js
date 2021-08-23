@@ -1,5 +1,5 @@
 window.onscroll = function (e) {
-    console.log(window.scrollY); // Value of scroll Y in px
+//     console.log(window.scrollY); // Value of scroll Y in px
     if(window.scrollY > 500){
         
         // document.getElementsByClassName("fd_content")[0].style.display="none";
