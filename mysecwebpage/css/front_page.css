@@ -210,7 +210,7 @@ body {
 .sec_div{
   min-height: 500px;
   color: white;
-  padding: 100px;
+  padding: 10vw;
 }
 @media only screen and (max-width: 600px) {
   .alloptions {
