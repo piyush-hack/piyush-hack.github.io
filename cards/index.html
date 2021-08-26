@@ -78,6 +78,8 @@
 
     <script type="text/javascript" src="static/js/vanilla-tilt.js"></script>
     <script type="text/javascript">
+      
+      if(screen.width > 500){
       VanillaTilt.init(document.querySelectorAll(".card"), {
         max: 25,
         speed: 400,
@@ -87,6 +89,7 @@
 
       //It also supports NodeList
       VanillaTilt.init(document.querySelectorAll(".cardt"));
+      }
     </script>
   </body>
 </html>
