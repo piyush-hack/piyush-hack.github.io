@@ -54,6 +54,8 @@ section .color:nth-child(3){
 
 .box{
     position: relative;
+    transition: 2s;
+
 }
 
 .box .square{
@@ -117,6 +119,8 @@ section .color:nth-child(3){
     left: 100px;
     width: 50px;
     height: 50px;
+        transition: 2s;
+
 }
 
 .box .square:nth-child(5){
@@ -129,6 +133,8 @@ section .color:nth-child(3){
 
 
 .container{
+    transition: 2s;
+
     position: relative;
     min-width: 350px;
     min-height: 400px;
@@ -149,8 +155,14 @@ section .color:nth-child(3){
     min-width: 350px;
     min-height: 400px;
     padding: 40px;
+    transition: 2s;
 
 }
+
+.form2{
+    display: none;
+}
+
 
 .form h2{
     position: relative;
@@ -214,4 +226,66 @@ section .color:nth-child(3){
 .forget a{
     color: #fff;
     font-weight: 600;
+}
+
+
+.hide_slow{
+    transition: 2s;
+    position: absolute;
+    animation: myhidemove 2s linear forwards;
+
+}
+
+
+
+
+@keyframes myhidemove{
+    0% {
+        clip: rect(0px,350px, 400px,0px);
+    }
+    30%{
+        clip: rect(0px,350px, 300px,0px);
+    }
+    60%{
+        clip: rect(0px,350px, 200px,0px);
+    }
+    90%{
+        clip: rect(0px,350px, 100px,0px);
+    }
+    100%{
+        clip: rect(0px,350px, 0px,0px);
+        /* position: relative; */
+        display: none;
+    }
+}
+
+
+
+.show_slow{
+    z-index: 1031;
+    position: absolute;
+    /* clip: rect(400px,350px, 400px,0px); */
+    animation: myshowmove 2s linear forwards;
+    display: block;
+
+
+}
+
+@keyframes myshowmove{
+    0% {
+        clip: rect(400px,350px, 400px,0px);
+    }
+    30%{
+        clip: rect(300px,350px, 400px,0px);
+    }
+    60%{
+        clip: rect(200px,350px, 400px,0px);
+    }
+    90%{
+        clip: rect(100px,350px, 400px,0px);
+    }
+    100%{
+        clip: rect(0px,350px, 400px,0px);
+        /* position: relative; */
+    }
 }
