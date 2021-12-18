@@ -52,14 +52,13 @@ hr {
   height: 50vh;
   padding-left: 45px;
   padding-top: 107px;
-
 }
 .leftmc .pageinfo .pi_col div {
   margin-top: 10px;
 }
 
 .leftmc .pageinfo .pi_col div:hover {
-  color: #2292dd !important; 
+  color: #2292dd !important;
 }
 .leftmc .pageinfo .pi_col div a {
   text-decoration: none;
@@ -353,6 +352,99 @@ nav ul li a {
   top: 8px;
 }
 
+.askquestion {
+  display: none;
+  flex-direction: column;
+  width: 57vw;
+  margin: auto;
+  margin-bottom: 53px;
+  margin-top: 33px;
+  opacity: 0;
+}
+
+.askquestion .h3 {
+  font-size: 25px;
+}
+
+.askquestion input {
+  min-height: 25px;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  border: 5px solid white;
+
+}
+
+.askquestion input:focus{
+  border: 5px solid white;
+  outline-width: 0;
+  animation: btnclick 0.3s forwards;
+
+}
+
+.askquestion button {
+  padding: 5px;
+  font-size: 20px;
+  background-color: #0169AF;
+  color: #fff;
+  width: 190px;
+  margin: 10px;
+  border-radius: 7px;
+  border: 5px solid white;
+}
+
+.askquestion button:hover{
+  /* border: 5px solid rgba(1, 105, 175 , 0.5); */
+  -webkit-background-clip: padding-box; /* for Safari */
+  background-clip: padding-box;
+  animation: btnclick 0.3s forwards;
+}
+
+@keyframes btnclick {
+  0%{
+    border: 5px solid white;
+  }
+  100%{
+    border: 5px solid rgba(94, 134, 160, 0.5);
+
+  }
+}
+
+.op0{
+  animation: op0 0.3s forwards;
+  display: none;
+
+
+}
+
+
+@keyframes op0 {
+  0%{
+    opacity: 100%;
+  }
+  100%{
+    opacity: 0%;
+
+  }
+}
+
+.trd{
+  display: flex;
+  opacity: 0;
+  animation: trd 0.3s forwards;
+}
+
+
+@keyframes trd {
+  0%{
+    opacity: 0%;
+  }
+  100%{
+    opacity: 100%;
+  }
+}
 @media only screen and (max-width: 800px) {
   .cdw {
     /* display: flex; */
@@ -383,13 +475,13 @@ nav ul li a {
     transform: translateX(300px);
   }
 
-  .leftmc{
+  .leftmc {
     transform: translateX(-300px);
-
   }
   .leftmc .pageinfo {
     transform: translateX(-300px);
-    width: 31vw;
-  }
+    /* width: 31vw; */
+    width: 232px;
 
+  }
 }
