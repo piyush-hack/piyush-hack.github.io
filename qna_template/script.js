@@ -47,8 +47,6 @@ $("nav ul li").on("click", function () {
   $(this).addClass("isactivated");
 });
 
-
-
 $(".counter").each(function () {
   var $this = $(this),
     countTo = $this.attr("data-count");
@@ -59,7 +57,7 @@ $(".counter").each(function () {
     },
 
     {
-      duration: countTo*100,
+      duration: countTo * 100,
       easing: "linear",
       step: function () {
         $this.text(Math.floor(this.countNum));
@@ -72,26 +70,48 @@ $(".counter").each(function () {
   );
 });
 
-
-$('.trigger').on('click' , function () { 
-
-  if($(this).hasClass('show')){
-    $('.leftmc .pageinfo').css("transform" , 'translateX(300px)');
+$(".trigger").on("click", function () {
+  if ($(this).hasClass("show")) {
+    $(".leftmc .pageinfo").css("transform", "translateX(300px)");
     $(this).removeClass("show");
     $(this).addClass("hide");
-    $(this).children('i').removeClass("fa-bars");
-    $(this).children('i').addClass("fa-times");
-
-  }else{
-    $('.leftmc .pageinfo').css("transform" , 'translateX(-300px)');
+    $(this).children("i").removeClass("fa-bars");
+    $(this).children("i").addClass("fa-times");
+  } else {
+    $(".leftmc .pageinfo").css("transform", "translateX(-300px)");
     $(this).removeClass("hide");
     $(this).addClass("show");
-    $(this).children('i').removeClass("fa-times");
-    $(this).children('i').addClass("fa-bars");
+    $(this).children("i").removeClass("fa-times");
+    $(this).children("i").addClass("fa-bars");
   }
+});
 
- })
+let theEditor;
 
+// EditorClass.create({
+//   toolbar: ["bold", "italic"],
+//   mediaEmbed: {
+//     previewsInData: true,
+//   },
+// })
+//   .then("hgmgh")
+//   .catch("...");
+
+ClassicEditor.create(document.querySelector("#contentDetails"), {
+  ckfinder: {
+    uploadUrl:
+      "/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json",
+  },
+  mediaEmbed: {
+    previewsInData: true,
+  },
+})
+  .then((editor) => {
+    theEditor = editor;
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 
 function get(name) {
   if (
@@ -101,3 +121,23 @@ function get(name) {
   )
     return decodeURIComponent(name[1]);
 }
+
+function ani(op0, trd, curr) {
+  $(`.${op0}`).addClass("op0");
+  $(`.${trd}`).addClass("trd");
+  $('#' + curr).html("Open All Questions");
+  document.getElementById(curr).onclick = function () {
+    remove_ani(op0, trd, curr);
+  };
+}
+
+function remove_ani(op0, trd, curr) {
+  $(`.${op0}`).removeClass("op0");
+  $(`.${trd}`).removeClass("trd");
+  $('#' + curr).html("ASK A QUESTION");
+
+  document.getElementById(curr).onclick = function () {
+    ani(op0, trd, curr);
+  };
+}
+
