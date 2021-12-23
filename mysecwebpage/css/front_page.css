@@ -52,12 +52,13 @@ a:hover {
 
 .options {
   text-decoration: none;
-  color: white;
   margin: 0px 10px 0px 10px;
   padding: 5px 10px 5px 10px;
   font-weight: 300;
   border-radius: 25px;
   float: right;
+  background-color: white;
+  color: black;
 
   transition: 0.3s;
 
@@ -65,7 +66,7 @@ a:hover {
 }
 
 .options:hover {
-  background-color: white;
+  background-color: #eeeee4;
   color: black;
 }
 
