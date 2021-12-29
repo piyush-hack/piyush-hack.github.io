@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&family=Ubuntu&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  background-color: rgb(235, 235, 235);
+}
+
+nav {
+  position: relative;
+
+  background-color: #fff;
+  height: 50px;
+  margin: 25px auto;
+  border-bottom: 3px solid #eee;
+}
+
+nav .slider {
+  position: absolute;
+  bottom: 0;
+  width: 25%;
+  height: 3px;
+  box-shadow: 0 3px #2292dd;
+  transition: all 0.3s ease-in-out;
+}
+nav ul {
+  list-style: none;
+  height: 50px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+nav ul li {
+  width: 25%;
+  height: 50px;
+  flex: 25%;
+  line-height: 50px;
+  text-align: center;
+}
+nav ul li a {
+  text-decoration: none;
+  color:#706e6e;
+}
+
+nav ul .isactive a{
+    color: #000;
+}
+
+nav ul .isactivated a{
+    color: #000;
+}
