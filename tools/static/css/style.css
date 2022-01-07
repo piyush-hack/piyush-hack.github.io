@@ -1,0 +1,243 @@
+#loader {
+  position: fixed;
+  background-color: rgb(238 232 232 / 50%);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  text-align: center;
+  padding-top: 200px;
+  z-index: 2;
+  display: none;
+}
+
+.scroller {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  text-align: center;
+}
+
+.scroller button {
+  border: none;
+  box-shadow: none;
+  border-radius: 25px;
+  margin-bottom: 5px;
+}
+
+/* /////////////////////////////////////////////////////////// */
+#capture {
+  max-width: 100vw;
+  margin: auto;
+}
+.tempimg {
+  max-width: 100vw;
+}
+
+form {
+  margin: 20px;
+}
+
+label {
+  position: inherit;
+}
+input {
+  max-width: 500px;
+}
+
+[type="file"] {
+  /* Style the color of the message that says 'No file chosen' */
+  color: #878787;
+  max-width: 71% !important;
+}
+[type="file"]::-webkit-file-upload-button {
+  background: #1b99ed;
+  border: 2px solid #1b99ed;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  outline: none;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  transition: all 1s ease;
+}
+
+[type="file"]::-webkit-file-upload-button:hover {
+  background: #fff;
+  border: 2px solid #535353;
+  color: #000;
+}
+
+/* GENERAL STYLING OF PAGE — NOT APPLICABLE TO EXAMPLE */
+button.iw {
+  border: none;
+  box-shadow: none;
+  border-radius: 5px;
+  z-index: 1;
+}
+.sb2 {
+
+    float: right;
+    margin-right: -9px;
+
+}
+#zoomcount {
+  min-width: 36px;
+  text-align: center;
+  border: 3px solid #efefef;
+  margin: 0px -5px 0px -5px;
+}
+
+select {
+  max-width: 500px;
+}
+
+.vertically {
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontally {
+  display: flex;
+  flex-direction: row;
+}
+
+.emb {
+  height: 100vh;
+  width: 100vw;
+}
+
+img:hover {
+  box-shadow: 0px 0px 5px 2px #888888;
+}
+
+#stickybar {
+  z-index: 1;
+}
+
+.affix {
+  position: fixed;
+  top: 26px;
+  z-index: 1;
+  width: 100%;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 2;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+  width: 70%;
+
+
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06d85f;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+.popbtn{
+    transform: scale(1.5);
+}
+
+@media only screen and (min-width: 600px) {
+  #capture {
+    width: 50vw;
+    margin: auto;
+  }
+}
+
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+.myhead h1 {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    color: #080808;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+  }
+  
+  .myhead h1 span {
+    display: block;
+    font-size: 0.5em;
+    line-height: 1.3;
+  }
+  .myhead h1 em {
+    font-style: normal;
+    font-weight: 600;
+  }
+  
+  /* === HEADING STYLE #1 === */
+  .one h1 {
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+  }
+  .one h1:before {
+    width: 40%;
+    height: 5px;
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    margin-left: -20%;
+    background-color: #1B99ED;
+  }
+  .one h1:after {
+    width: 70%;
+    height: 1px;
+    display: block;
+    content: "";
+    position: relative;
+    margin-top: 25px;
+    left: 50%;
+    margin-left: -36%;
+    background-color: #1B99ED;
+  }

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Combine Image</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+  <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
+  <link rel="stylesheet" href="static/css/style.css" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+    integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+    integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"
+    integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+
+  </div>
+
+
+  <br />
+  <div id="loader">
+    <img src="https://i.gifer.com/origin/b4/b4d657e7ef262b88eb5f7ac021edda87.gif" alt="">
+  </div>
+  <div class="scroller">
+    <button onclick="totop()" title="scroll up">↑</button>
+    <br>
+    <button onclick="tobottom()" title="scroll down">↓</button>
+  </div>
+
+  <div class="one myhead">
+    <h1>Static Tool</h1>
+  </div>
+
+  <div class="downimg">
+    <form runat="server">
+      <div class="row">
+        <label for="filename">Orientation : &nbsp; </label>
+        <select name="vercol" id="vercol" class="form-control">
+          <option value="vertically" default>Vertically</option>
+          <option value="horizontally">Horizontally</option>
+        </select>
+      </div>
+
+      <br />
+      <div class="row">
+        <label for="filename">&nbsp;FileName &nbsp; : &nbsp; </label>
+        <input type="text" placeholder="No Of Chunks" class="form-control required" id="filename" value="mydownload"
+          onclick="console.log('clicked on click')" />
+      </div>
+
+      <br />
+
+      <details>
+        <summary><label for="chunks">Chunks : </label> <a class="popbtn" href="#popup1">ⓘ</a> </summary>
+        <p>
+          <input type="number" placeholder="No Of Chunks" class="form-control" id="chunks" value="70" />
+        </p>
+      </details>
+      <div id="popup1" class="overlay">
+        <div class="popup">
+          <h2>What Are Chunks</h2>
+          <a class="close" href="#">&times;</a>
+          <div class="content">
+            Chunks Are The No Of Images You Want To Contain In A Single Image.<br>
+            Suppose Chunks Are 70 and you selected 100 images then there will be 2 download buttons one with first 70
+            images and other with next 30 images. <br>
+            70 and 8 are the recommended chunks in vertical and horizontal merging respectively. If selected a few times
+            larger chunks then it may show error since width of images may become very small then the minium width.
+          </div>
+        </div>
+      </div>
+      <details>
+        <summary><label for="timer">Process Time : </label> <a class="popbtn" href="#popup2">ⓘ</a> </summary>
+        <p>
+          <input type="number" placeholder="No Of Chunks" class="form-control" id="timer" value="500" />
+        </p>
+      </details>
+      <div id="popup2" class="overlay">
+        <div class="popup">
+          <h2>What Is Process Time</h2>
+          <a class="close" href="#">&times;</a>
+          <div class="content">
+            Its the Time Unit Given To Process The Lining Of Images . <br>
+            <b>This matter only when large no of images like above 50 are selected. </b> <br>
+            Suppose You Have Selected 100 images with 70 chunks and process time is kept at 0 then images may be added
+            in a random manner. <br>
+            But If procces time is 1000 then images will be in selected manner. <br>
+            In case of maore images like 160 with chunks 70 first 70- 80 images will be in slected manner but the in
+            random . IN this case upload images in 2 or mutiple times (they will be added to bottom previously added
+            images)
+          </div>
+        </div>
+      </div>
+
+      <br /><br />
+
+      <div class="stickybar">
+        <a class="popbtn" href="#popup4" style="position: absolute;top: 45px;">ⓘ</a>
+        <input accept="image/*" type="file" id="imgInp" multiple class="form-input" />
+        <div class="row sb2">
+          <a class="popbtn" href="#popup3"> ⓘ </a> &nbsp;&nbsp;
+          <button type="button" class="iw" onclick="zoomin()" title="increase image width">
+            +
+          </button>
+          <div id="zoomcount">0</div>
+          <button type="button" class="iw" onclick="zoomout()" title="decrease image width">
+            -
+          </button>
+        </div>
+        <div id="popup3" class="overlay">
+          <div class="popup">
+            <h2>+ & -</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+              These Buttons Doesn't zoom in or out. <br>
+              These are for changing width because images may blur out or may not be very clear if not set to their
+              appropriate width . <br>
+              One can use them to zoom but remember to set it to approiate width before downloading otherwise images
+              will be downloaded in the wodth you have set.
+            </div>
+          </div>
+        </div>
+        <div id="popup4" class="overlay">
+          <div class="popup">
+            <h2>Upload Images</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+              You Can Upload as many images as you want at a time. <br>
+              Now suppose you uploaded 10 images at one time and then added 7 more images to it. <br>
+              Now there will be 2 download buttons at the bottom . One for yhe first 10 images and other one for next 7
+              i.e. every time you uploaded images a button will be created for that upload . <br>
+              New images will not be downloaded with the same button with which previously added images were being
+              downloaded
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div id="capture"></div>
+
+    <hr />
+
+    <div id="download"></div>
+    <br /><br /><br /><br /><br /><br /><br />
+  </div>
+
+  <script src="static/js/script.js"></script>
+</body>
+
+</html>
