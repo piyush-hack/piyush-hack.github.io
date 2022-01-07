@@ -117,7 +117,7 @@ img:hover {
   position: fixed;
   top: 26px;
   z-index: 1;
-  width: 100%;
+  width: 90vw;
 }
 
 .overlay {
