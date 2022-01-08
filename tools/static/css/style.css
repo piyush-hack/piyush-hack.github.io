@@ -35,6 +35,11 @@
   display: none;
 }
 
+.tempimg {
+  max-width: 100vw;
+  max-height: 100%;
+}
+
 form {
   margin: 20px;
 }
