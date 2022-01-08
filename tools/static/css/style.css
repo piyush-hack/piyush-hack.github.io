@@ -30,7 +30,7 @@
   margin: auto;
 }
 .tempimg {
-  max-width: 100vw;
+  /* max-width: 100vw; */
 }
 
 form {
