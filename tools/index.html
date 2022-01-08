@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <title>Static Tools</title>
+  <title>Combine Image</title>
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
   <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
@@ -27,6 +27,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"
     integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js"
+    integrity="sha512-vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -34,7 +37,7 @@
   </div>
 
 
-  <br />
+  <br>
   <div id="loader">
     <img src="https://i.gifer.com/origin/b4/b4d657e7ef262b88eb5f7ac021edda87.gif" alt="">
   </div>
@@ -45,7 +48,7 @@
   </div>
 
   <div class="one myhead">
-    <h1>Static Tools</h1>
+    <h1>Static Tool</h1>
   </div>
 
   <div class="downimg">
@@ -58,14 +61,14 @@
         </select>
       </div>
 
-      <br />
+      <br>
       <div class="row">
         <label for="filename">&nbsp;FileName &nbsp; : &nbsp; </label>
         <input type="text" placeholder="No Of Chunks" class="form-control required" id="filename" value="mydownload"
           onclick="console.log('clicked on click')" />
       </div>
 
-      <br />
+      <br>
 
       <details>
         <summary><label for="chunks">Chunks : </label> <a class="popbtn" href="#popup1">ⓘ</a> </summary>
@@ -109,7 +112,7 @@
         </div>
       </div>
 
-      <br /><br />
+      <br><br>
 
       <div class="stickybar">
         <a class="popbtn" href="#popup4" style="position: absolute;top: 45px;">ⓘ</a>
@@ -159,7 +162,11 @@
     <hr />
 
     <div id="download"></div>
-    <br /><br /><br /><br /><br /><br /><br />
+    <br><br>
+    <button id="dr" class="btn btn-primary">Download As Pdf</button>
+    <br><br>
+    <hr>
+    <br><br><br>
   </div>
 
   <script src="static/js/script.js"></script>
