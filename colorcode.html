@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- //color css -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/monokai-sublime.min.css" />
+
+    <!-- highlight script -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <pre>
+        <div class="code" contenteditable="true">
+            $(document).ready(function () {
+                hljs.initHighlightingOnLoad();
+                $(document).ready(function () {
+                    $("pre").each(function (i, block) {
+                        hljs.highlightBlock(block);
+                    });
+                });
+            });
+        </div>
+        <pre>
+    </div>
+
+        <script>
+        $(document).ready(function () {
+            hljs.initHighlightingOnLoad();
+            $(document).ready(function () {
+                $(".code").each(function (i, block) {
+                    hljs.highlightBlock(block);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
