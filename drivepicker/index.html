@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Google Picker Example</title>
+
+    <script type="text/javascript">
+      // The Browser API key obtained from the Google API Console.
+      // Replace with your own Browser API key, or your own key.
+      var developerKey = "AIzaSyDPhzbJzenBxC1igS9tVfJwnw3QH9_Zrwg";
+
+      // The Client ID obtained from the Google API Console. Replace with your own Client ID.
+      var clientId =
+        "317281430722-2tbhfs3pntue5ch46rh3h5l9jvv5ba9b.apps.googleusercontent.com";
+
+      // Replace with your own project number from console.developers.google.com.
+      // See "Project number" under "IAM & Admin" > "Settings"
+      var appId = "317281430722";
+
+      // Scope to use to access user's Drive items.
+      var scope = ["https://www.googleapis.com/auth/drive.file"];
+
+      var pickerApiLoaded = false;
+      var oauthToken;
+
+      // Use the Google API Loader script to load the google.picker script.
+      function loadPi() {
+        gapi.load("auth", { callback: onAuthApiLoad });
+        gapi.load("picker", { callback: onPickerApiLoad });
+      }
+
+      function onAuthApiLoad() {
+        window.gapi.auth.authorize(
+          {
+            client_id: clientId,
+            scope: scope,
+            immediate: false,
+          },
+          handleAuthResult
+        );
+      }
+
+      function onPickerApiLoad() {
+        pickerApiLoaded = true;
+        createPicker();
+      }
+
+      function handleAuthResult(authResult) {
+        if (authResult && !authResult.error) {
+          oauthToken = authResult.access_token;
+          createPicker();
+        }
+      }
+
+      // Create and render a Picker object for searching images.
+      function createPicker() {
+        if (pickerApiLoaded && oauthToken) {
+          var view = new google.picker.View(google.picker.ViewId.DOCS);
+          // view.setMimeTypes("image/png,image/jpeg,image/jpg");
+
+          // Use DocsUploadView to upload documents to Google Drive.
+          const docsView = new google.picker.DocsView(google.picker.ViewId.DOCS)
+                    .setIncludeFolders(true)
+                    .setSelectFolderEnabled(true);
+          var picker = new google.picker.PickerBuilder()
+            .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
+            .setAppId(appId)
+            .setOAuthToken(oauthToken)
+            .addView(docsView)
+            .addView(new google.picker.DocsUploadView())
+            .addView(google.picker.ViewId.SPREADSHEETS)
+            .setDeveloperKey(developerKey)
+            .setCallback(pickerCallback)
+            .build();
+          picker.setVisible(true);
+        }
+      }
+
+      // A simple callback implementation.
+      function pickerCallback(data) {
+        if (data.action == google.picker.Action.PICKED) {
+          console.log(data);
+          url = "";
+          for (let i = 0; i < data.docs.length; i++) {
+            const element = data.docs[i];
+            url += element.embedUrl + " <br> ";
+          }
+          document.getElementById("result").innerHTML = url;
+          // alert("The user selected: " + fileId);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="loadPi()">Select</button>
+    <div id="result"></div>
+    <img id="selected" src="" alt="" srcset="" />
+
+    <!-- The Google API Loader script. -->
+    <script
+      type="text/javascript"
+      src="https://apis.google.com/js/api.js?onload=loadPicker"
+    ></script>
+  </body>
+</html>
