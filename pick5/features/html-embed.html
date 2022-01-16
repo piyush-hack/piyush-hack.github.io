@@ -18,10 +18,17 @@
     <div>
         <div id="snippet-html-embed"></div>
 
+        <div style="display : none">
         <button type="button" id="preview-data-action">
             Preview editor data
         </button>
         <iframe id="preview-data-container" aria-hidden="true" tabindex="-1"></iframe>
+        </div>
+        
+        <button type="button" id="preview" onclick="preview()">
+            Preview editor data
+        </button>
+        <div id="preview-div"></div>
 
         <style>
             #preview-data-container {
@@ -51,6 +58,12 @@
     <script src="../snippets/assets.js"></script>
     <script src="../snippets/features/html-embed/snippet.js"></script>
     <script src="../assets/buildwarningbanner.js" async></script>
+    <script>
+       function preview(){
+            var t = editorInt(); 
+            document.getElementById("preview-div").innerHTML = t.getData();
+       }
+    </script>
 </body>
 
 </html>
