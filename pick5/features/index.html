@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Blog page</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+    <title>Blog</title>
+
+    <link rel="stylesheet" href="https://piyush-hack.github.io/pick5/assets/styles.css" type="text/css" />
+    <link rel="stylesheet" href="https://piyush-hack.github.io/pick5/snippets/features/html-embed/snippet.css"
+        type="text/css" data-cke="true" />
+</head>
+
+<body style="padding:10vw">
+    </div>
+    <h1 class="h1">Create your blog</h1>
+    <br><br>
+    <form method="POST" action="/blog/Add" id="my_form" name="Form">
+
+
+        <label class="h3 theorytag">Theory</label>
+        <br>
+        <div id="snippet-html-embed"><img src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif"
+                alt="description of gif" /></div>
+        <style>
+            #preview-data-container {
+                width: 100%;
+                height: 500px;
+                border: solid 2px #333;
+            }
+
+            .ck-editor__editable_inline {
+                max-height: 500px;
+                overflow: auto;
+            }
+
+            .ck-focused {
+                top: 0;
+            }
+        </style>
+        <br><br>
+        <h3><button type="button" class="btn btn-outline-success" id="setdata">Setdata</button></h3>
+        <h3><button type="button" class="btn btn-outline-success" onclick="showsub()">ENABLE SUBMIT BUTTON</button></h3>
+        <br>
+        <button type="button" id="preview-data-action">
+            | Preview editor data
+        </button>
+        <iframe id="preview-data-container" aria-hidden="true" tabindex="-1"></iframe>
+        <br>
+        <button id="submit" class="btn btn-primary btn-lg btn-block" type="submit" style="display: none;"
+            name="submit">Submit Blog</button>
+    </form>
+
+    <script src="https://piyush-hack.github.io/pick5/assets/docsearch.min.js"></script>
+    <script src="https://piyush-hack.github.io/pick5/assets/snippet.js"></script>
+    <script src="https://piyush-hack.github.io/pick5/snippets/assets.js"></script>
+    <!-- <script src="https://piyush-hack.github.io/pick5/snippets/features/html-embed/snippet.js"></script> -->
+    <script src="./snippet.js"></script>
+    <script src="https://piyush-hack.github.io/pick5/assets/buildwarningbanner.js" async></script>
+    <script src="./createtextarea.js"></script>
+
+
+
+</body>
+
+</html>
