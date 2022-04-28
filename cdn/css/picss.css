@@ -162,12 +162,12 @@
   margin: 0;
   position: absolute;
   bottom: 0px;
-  transition: transform .3s ease-out !important;
+  transition: transform 0.3s ease-out !important;
   transform: none !important;
 }
 
 .modal-top .modal-content,
-.modal-bottom .modal-content{
+.modal-bottom .modal-content {
   border-radius: 0px;
 }
 
@@ -177,67 +177,76 @@
 }
 
 .pi-slide-wrap {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    background: #120103;
-    color: #fff;
-    text-align: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #120103;
+  color: #fff;
+  text-align: center;
 }
 
 header.pi-slide {
-    background: #3e474f;
-    box-shadow: 0 0.5em 1em #111;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 900;
-    width: 100%;
+  background: #3e474f;
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 7%), 0 2px 4px rgb(0 0 0 / 5%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  width: 100%;
+}
+
+header.light {
+  background: #f9f9f9;
+  color: black;
 }
 
 header.pi-slide label {
-    color: #788188;
-    cursor: pointer;
-    display: inline-block;
-    line-height: 4.25em;
-    font-size: 1em;
-    font-weight: bold;
-    padding: 0 1em;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 4.25em;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0 1em;
 }
 
 header.pi-slide label:hover {
-    background: #2e353b;
+  background: #2e353b;
+}
+
+header.light label:hover{
+    background: #f5f5f5;
 }
 
 .pi-main-slide {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    z-index: 10;
-    padding: 8em 1em 0;
-    background-color: #120103;
-    background-position: 50% 50%;
-    background-size: cover;
-    transition: left 0s 0.75s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 10;
+  padding: 8em 1em 0;
+  background-color: #120103;
+  background-position: 50% 50%;
+  background-size: cover;
+  transition: left 0s 0.75s;
 }
 
-[id^="pi-slide"]:checked+.pi-main-slide {
-    left: 0;
-    z-index: 100;
-    transition: left 0.65s ease-out;
+[id^="pi-slide"]:checked + .pi-main-slide {
+  left: 0;
+  z-index: 100;
+  transition: left 0.65s ease-out;
 }
 
 .pi-main-slide h1 {
-    opacity: 0;
-    transform: translateY(100%);
-    transition: transform 0.5s 0.5s, opacity 0.5s;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.5s 0.5s, opacity 0.5s;
 }
 
-[id^="pi-slide"]:checked+.pi-main-slide h1 {
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.5s 0.5s;
+[id^="pi-slide"]:checked + .pi-main-slide h1 {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s 0.5s;
 }
