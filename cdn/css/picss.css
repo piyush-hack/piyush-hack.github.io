@@ -197,10 +197,6 @@ header.pi-slide {
   width: 100%;
 }
 
-header.light {
-  background: #f9f9f9;
-  color: black;
-}
 
 header.pi-slide label {
   cursor: pointer;
@@ -215,8 +211,17 @@ header.pi-slide label:hover {
   background: #2e353b;
 }
 
-header.light label:hover{
-    background: #f5f5f5;
+.light header{
+  background : #f9f9f9 !important;
+  color : black;
+}
+
+.light header label:hover {
+    background: #f5f5f5 !important;
+}
+.light section{
+  background : white !important;
+  color : black !important;
 }
 
 .pi-main-slide {
