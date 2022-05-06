@@ -14,7 +14,7 @@ async function initM(e) {
     await $(".progress").css("display", "block");
 
     let data = e;
-    let res = await callAPI("POST", "http://localhost:5000/api/scrape/site", data);
+    let res = await callAPI("POST", "https://apiwebscraper.herokuapp.com/api/scrape/site", data);
     console.log(res);
     if (res && !res.err) {
         await $(e.at).append(res.data);
